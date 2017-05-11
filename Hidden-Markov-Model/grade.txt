@@ -1,0 +1,27 @@
+Grade: 46.00/50.00
+
+1 Deduction(s):
+
+--------------
+#1: 4.00 points
+Failing test: test_hmm_fit_emission_smoothed2: Test supervised HMM learning emission probabilities.
+		@points=4
+		
+Traceback (most recent call last):
+  File "../assignments-sol/a2/a2_test.py", line 64, in test_hmm_fit_emission_smoothed2
+    self.assertEqual(0.03, round(model.emission_probas['D']['ball'], 2))
+AssertionError: 0.03 != 0.02
+
+source:
+	def test_hmm_fit_emission_smoothed2(self):
+ 		"""Test supervised HMM learning emission probabilities.
+ 		@points=4
+ 		"""
+ 		model = HMM(smoothing=.1)
+ 		model.fit(test_sentences, test_tags)
+ 		self.assertEqual(0.84, round(model.emission_probas['D']['the'], 2))
+ 		self.assertEqual(0.03, round(model.emission_probas['D']['ball'], 2))
+ 		self.assertEqual(0.03, round(model.emission_probas['D']['boy'], 2))
+ 		self.assertEqual(0.03, round(model.emission_probas['D']['jump'], 2))
+--------------
+

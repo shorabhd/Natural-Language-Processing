@@ -1,0 +1,1 @@
+In this assignment, I have implemented a Hidden Markov Model and use it to fit a part-of-speech tagger.
